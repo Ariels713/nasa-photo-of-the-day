@@ -1,4 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
+
+
+const Button = styled.button`
+  padding: 6px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+
+  ${props => (props.type === "Random Date in History" ? `background: #fdd835` : `background: #fdd835`)}
+`;
 
 
 
@@ -15,7 +27,10 @@ export default function ButtonMaker(props) {
     // why Is the console only laying I'm passing an
     return (
         <div>
-            <button onClick={() => props.updateImage(anyDate)}>{props.label}</button>
+            <Button 
+            onClick={() => props.updateImage(anyDate)}
+            >{props.label}
+            </Button>
         </div>
     )
 }

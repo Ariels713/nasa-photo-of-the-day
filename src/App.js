@@ -6,11 +6,9 @@ import PhotoDisplayer from "./components/PhotoDisplayer";
 import PhotoTitle from './components/PhotoTitle';
 import PhotoInfo from './components/PhotoInfo';
 
-// new Date().toISOString().split('T')[0]
-
 function App() {
   const [nasaData, setNasaData] = useState({})
-  const [date, setDate] = useState(`2019-10-23`)
+  const [date, setDate] = useState(`2019-10-24`)
 
 
   useEffect(() => {
@@ -33,7 +31,11 @@ function App() {
       <PhotoTitle title={nasaData.title}/>
       <PhotoDisplayer imageSrc={nasaData.url}/>
       <PhotoInfo explanation={nasaData.explanation} />
-      <ButtonMaker label="Random Date in History" updateImage={setDate} />
+      <ButtonMaker 
+        label="Random Date in History" 
+        updateImage={setDate}
+        type="Random Date in History"
+      />
     
     </div>
   )
